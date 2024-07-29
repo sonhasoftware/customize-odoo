@@ -1,0 +1,41 @@
+span.d-block.min-w-0.text-truncate.flex-grow-1 {
+    text-align: center;
+}
+
+td.o_data_cell.cursor-pointer.o_field_cell.o_list_char {
+    text-align: center;
+}
+
+td.o_data_cell.cursor-pointer.o_field_cell.o_list_number {
+    text-align: center !important;
+}
+
+td.o_data_cell.cursor-pointer.o_field_cell.o_list_text {
+    text-align: center;
+}
+
+.scrollable {
+  max-height: calc(100vh - 150px); /* Điều chỉnh chiều cao tối đa để phù hợp với chiều cao màn hình */
+  overflow-y: auto; /* Cho phép cuộn dọc */
+}
+
+.chart-container {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép xuống dòng */
+  gap: 20px; /* Khoảng cách giữa các biểu đồ */
+}
+
+.chart-item {
+  flex: 0 1 calc(50% - 20px); /* Mỗi biểu đồ chiếm 50% chiều rộng và trừ khoảng cách */
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .chart-item {
+    flex: 0 1 100%; /* Chiếm 100% chiều rộng trên màn hình nhỏ */
+  }
+}
+
+.mk_apps_sidebar_panel {
+    display: none !important;
+}

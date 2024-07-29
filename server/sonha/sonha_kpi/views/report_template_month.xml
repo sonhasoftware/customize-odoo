@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="template_report_month">
+        <t t-call="web.html_container">
+            <div class="page">
+                <style>
+                    th, td {
+                        border: 1px solid #000;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    th {
+                        background-color: #CCFFFF;
+                    }
+                </style>
+                <t t-if="docs">
+                <table>
+                    <thead>
+                        <tr>
+                            <th rowspan="2">NỘI DUNG CÔNG VIỆC Đã giao ở mục tiêu/ KPIs cả năm</th>
+                            <th rowspan="2">NỘI DUNG CÔNG VIỆC CỤ THỂ<br/>(Tối đa 8 và tối thiểu 3 mục tiêu)</th>
+                            <th colspan="2">THỜI GIAN THỰC HIỆN</th>
+                            <th rowspan="2">TIÊU CHÍ ĐÁNH GIÁ RÚT GỌN</th>
+                            <th rowspan="2">Tỷ trọng</th>
+                            <th rowspan="2">Điểm chuẩn</th>
+                            <th rowspan="2">MÔ TẢ CHI TIẾT CÔNG VIỆC/ KIẾN NGHỊ ĐỀ XUẤT CỦA ĐƠN VỊ</th>
+                            <th colspan="3">Σ ĐIỂM ĐƠN VỊ ĐÁNH GIÁ</th>
+                            <th colspan="3">Σ ĐIỂM CẤP THAM QUYỀN ĐÁNH GIÁ</th>
+                            <th rowspan="2">NHẬN XÉT CỦA CẤP CÓ THAM QUYỀN</th>
+                        </tr>
+                        <tr>
+                            <th>Bắt đầu</th>
+                            <th>Hoàn thành</th>
+                            <th>Kết quả hoàn thành</th>
+                            <th>Điểm đạt</th>
+                            <th>Điểm quy đổi theo tỷ trọng</th>
+                            <th>Kết quả hoàn thành</th>
+                            <th>Điểm đạt</th>
+                            <th>Điểm quy đổi theo tỷ trọng</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td rowspan="4" style="font-weight: bold;"><t t-esc="doc.name.name"/></td>
+                                <td rowspan="4"><t t-esc="doc.content_detail"/></td>
+                                <td rowspan="4"><t t-esc="doc.start_date"/></td>
+                                <td rowspan="4"><t t-esc="doc.end_date"/></td>
+                                <td>Khối lượng công việc thực hiện</td>
+                                <td rowspan="4"><t t-esc="doc.ti_trong * 100"/>%</td>
+                                <td><t t-esc="doc.diem_chuan_amount_work"/></td>
+                                <td rowspan="4"><t t-esc="doc.description"/></td>
+
+                                <td><t t-esc="doc.kq_hoan_thanh_amount_work * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_dv_amount_work"/></td>
+                                <td><t t-esc="doc.quy_doi_dv_amount_work"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_tq_amount_work * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_tq_amount_work"/></td>
+                                <td><t t-esc="doc.quy_doi_tq_amount_work"/></td>
+                                <td rowspan="4"><t t-esc="doc.note"/></td>
+                            </tr>
+                            <tr>
+                                <td>Chất lượng công việc thực hiện</td>
+                                <td><t t-esc="doc.diem_chuan_matter_work"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_matter_work * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_dv_matter_work"/></td>
+                                <td><t t-esc="doc.quy_doi_dv_matter_work"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_tq_matter_work * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_tq_matter_work"/></td>
+                                <td><t t-esc="doc.quy_doi_tq_matter_work"/></td>
+                            </tr>
+                            <tr>
+                                <td>Chấp hành nội quy, quy chế, kỷ luật lao động</td>
+                                <td><t t-esc="doc.diem_chuan_comply_regulations"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_comply_regulations * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_dv_comply_regulations"/></td>
+                                <td><t t-esc="doc.quy_doi_dv_comply_regulations"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_tq_comply_regulations * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_tq_comply_regulations"/></td>
+                                <td><t t-esc="doc.quy_doi_tq_comply_regulations"/></td>
+                            </tr>
+                            <tr>
+                                <td>Cải tiến, đề xuất, sáng kiến</td>
+                                <td><t t-esc="doc.diem_chuan_initiative"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_initiative * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_dv_initiative"/></td>
+                                <td><t t-esc="doc.quy_doi_dv_initiative"/></td>
+                                <td><t t-esc="doc.kq_hoan_thanh_tq_initiative * 100"/>%</td>
+                                <td><t t-esc="doc.diem_dat_tq_initiative"/></td>
+                                <td><t t-esc="doc.quy_doi_tq_initiative"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                </t>
+                <t t-else="">
+                    <h1>Không có dữ liệu để hiển thị</h1>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

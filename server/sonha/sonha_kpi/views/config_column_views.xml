@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="config_column_tree_view" model="ir.ui.view">
+            <field name="name">config.column.tree.view</field>
+            <field name="model">config.column</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="number"/>
+                    <field name="result_field_id"/>
+                    <field name="field1_id"/>
+                    <field name="operation"/>
+                    <field name="field2_id"/>
+                    <field name="department_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_column_config_column" model="ir.actions.act_window">
+            <field name="name">Cấu hình công thức KPI</field>
+            <field name="res_model">config.column</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+        </record>
+
+<!--        <menuitem id="menu_sonha_kpi_kpi_rel"-->
+<!--                  name="Cấu hình công thức KPI"-->
+<!--                  parent="sonha_kpi.menu_sonha_kpi"-->
+<!--                  action="action_column_config_column"-->
+<!--                  sequence="2"/>-->
+    </data>
+</odoo>

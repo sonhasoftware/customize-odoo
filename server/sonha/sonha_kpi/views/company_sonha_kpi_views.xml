@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="company_sonha_kpi_form_view" model="ir.ui.view">
+            <field name="name">company.sonha.kpi.form.view</field>
+            <field name="model">company.sonha.kpi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="department_id"/>
+                        <field name="year" widget="char"/>
+                    </group>
+                    <notebook>
+                        <page string="KPI năm" name="dl_appraisal_year">
+                            <group>
+                                <field name="kpi_year" string="">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+                                        <field name="kpi_year" widget="percentage"/>
+                                        <field name="dvdg_kpi" widget="percentage"/>
+                                        <field name="dvdg_status"/>
+                                        <field name="ctqdg_kpi" widget="percentage"/>
+                                        <field name="ctqdg_status"/>
+                                        <field name="ti_le_monh_one" widget="percentage"/>
+                                        <field name="ti_le_monh_two" widget="percentage"/>
+                                        <field name="ti_le_monh_three" widget="percentage"/>
+                                        <field name="ti_le_monh_four" widget="percentage"/>
+                                        <field name="ti_le_monh_five" widget="percentage"/>
+                                        <field name="ti_le_monh_six" widget="percentage"/>
+                                        <field name="ti_le_monh_seven" widget="percentage"/>
+                                        <field name="ti_le_monh_eight" widget="percentage"/>
+                                        <field name="ti_le_monh_nigh" widget="percentage"/>
+                                        <field name="ti_le_monh_ten" widget="percentage"/>
+                                        <field name="ti_le_monh_eleven" widget="percentage"/>
+                                        <field name="ti_le_monh_twenty" widget="percentage"/>
+                                        <field name="sonha_kpi" invisible="True"/>
+                                    </tree>
+                                    <form string="KPI Year">
+                                        <group>
+                                            <field name="sonha_kpi" invisible="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="KPI tháng" name="dl_appraisal_month">
+                            <group>
+                                <field name="kpi_month" string="" context="{'default_kpi_id': id}">
+                                    <tree editable="bottom">
+                                        <field name="small_items_each_month"/>
+                                        <field name="kpi_year_id"/>
+                                        <field name="employee_id" widget="many2many_tags"/>
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+
+                                        <field name="dv_amount_work" widget="percentage"/>
+                                        <field name="dv_matter_work" widget="percentage"/>
+                                        <field name="dv_comply_regulations" widget="percentage"/>
+                                        <field name="dv_initiative" widget="percentage"/>
+                                        <field name="dv_description"/>
+
+                                        <field name="tq_amount_work" widget="percentage"/>
+                                        <field name="tq_matter_work" widget="percentage"/>
+                                        <field name="tq_comply_regulations" widget="percentage"/>
+                                        <field name="tq_initiative" widget="percentage"/>
+                                        <field name="status_tq"/>
+                                        <field name="tq_description"/>
+                                        <field name="sonha_kpi" invisible="1"/>
+                                    </tree>
+                                    <form string="KPI Year">
+                                        <group>
+                                            <field name="kpi_year_id"/>
+                                            <field name="sonha_kpi" invisible="1"/>
+                                        </group>
+                                    </form>
+                                </field>
+                            </group>
+                        </page>
+                        <page string="Kết quả đánh giá hàng tháng" name="dl_appraisal_result_month">
+                            <group>
+                                <field name="kpi_result_month" string="" readonly="1">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="content_detail"/>
+                                        <field name="start_date"/>
+                                        <field name="end_date"/>
+                                        <field name="content"/>
+                                        <field name="ti_trong" widget="percentage"/>
+                                        <field name="description"/>
+
+                                        <field name="diem_chuan_amount_work"/>
+                                        <field name="kq_hoan_thanh_amount_work" widget="percentage"/>
+                                        <field name="diem_dat_dv_amount_work"/>
+                                        <field name="quy_doi_dv_amount_work"/>
+                                        <field name="kq_hoan_thanh_tq_amount_work" widget="percentage"/>
+                                        <field name="diem_dat_tq_amount_work"/>
+                                        <field name="quy_doi_tq_amount_work"/>
+
+                                        <field name="diem_chuan_matter_work"/>
+                                        <field name="kq_hoan_thanh_matter_work" widget="percentage"/>
+                                        <field name="diem_dat_dv_matter_work"/>
+                                        <field name="quy_doi_dv_matter_work"/>
+                                        <field name="kq_hoan_thanh_tq_matter_work" widget="percentage"/>
+                                        <field name="diem_dat_tq_matter_work"/>
+                                        <field name="quy_doi_tq_matter_work"/>
+
+                                        <field name="diem_chuan_comply_regulations"/>
+                                        <field name="kq_hoan_thanh_comply_regulations" widget="percentage"/>
+                                        <field name="diem_dat_dv_comply_regulations"/>
+                                        <field name="quy_doi_dv_comply_regulations"/>
+                                        <field name="kq_hoan_thanh_tq_comply_regulations" widget="percentage"/>
+                                        <field name="diem_dat_tq_comply_regulations"/>
+                                        <field name="quy_doi_tq_comply_regulations"/>
+
+                                        <field name="diem_chuan_initiative"/>
+                                        <field name="kq_hoan_thanh_initiative" widget="percentage"/>
+                                        <field name="diem_dat_dv_initiative"/>
+                                        <field name="quy_doi_dv_initiative"/>
+                                        <field name="kq_hoan_thanh_tq_initiative" widget="percentage"/>
+                                        <field name="diem_dat_tq_initiative"/>
+                                        <field name="quy_doi_tq_initiative"/>
+
+                                        <field name="note"/>
+
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <record id="company_sonha_kpi_tree_view" model="ir.ui.view">
+            <field name="name">company.sonha.kpi.tree.view</field>
+            <field name="model">company.sonha.kpi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="department_id"/>
+                    <field name="year" widget="char"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_company_sonha_kpi" model="ir.actions.act_window">
+            <field name="name">Quản lý KPI phòng ban</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">company.sonha.kpi</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('company_sonha_kpi_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('company_sonha_kpi_form_view')})]"/>
+        </record>
+
+        <menuitem id="menu_company_sonha_kpi"
+                  name="Quản lý KPI phòng ban"
+                  parent="sonha_kpi.menu_sonha_kpi"
+                  action="action_company_sonha_kpi"
+                  sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <record id="template_month_action" model="ir.actions.report">
+            <field name="name">Kết quả của tháng</field>
+            <field name="model">sonha.kpi.result.month</field>
+            <field name="report_type">qweb-html</field>
+            <field name="report_name">sonha_kpi.template_report_month</field>
+            <field name="report_file">sonha_kpi.template_report_month</field>
+            <field name="print_report_name">Report Month</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sonha_kpi_form_view" model="ir.ui.view">
+            <field name="name">sonha.kpi.form.view</field>
+            <field name="model">sonha.kpi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="log_kpi" invisible="1"/>
+                        <field name="name" readonly="log_kpi"/>
+                        <field name="employee_id" readonly="log_kpi"/>
+                        <field name="month" readonly="log_kpi"/>
+                        <field name="year" readonly="log_kpi"/>
+                        <field name="kpi_rel" readonly="log_kpi">
+                            <tree editable="bottom">
+                                <field name="content"/>
+                                <field name="ti_trong"/>
+                                <field name="diem_chuan"/>
+                                <field name="description"/>
+                                <field name="Chi_tieu_giao"/>
+                                <field name="ket_qua_dat"/>
+                                <field name="diem_dat"/>
+                                <field name="diem_quy_doi"/>
+                                <field name="diem_tien_bo"/>
+                                <field name="diem"/>
+                                <field name="Xep_loai"/>
+                                <field name="note"/>
+                            </tree>
+                        </field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="sonha_kpi_tree_view" model="ir.ui.view">
+            <field name="name">sonha.kpi.tree.view</field>
+            <field name="model">sonha.kpi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_sonha_kpi" model="ir.actions.act_window">
+            <field name="name">SonHa KPI</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sonha.kpi</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('sonha_kpi_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sonha_kpi_form_view')})]"/>
+        </record>
+
+        <menuitem id="menu_sonha_kpi"
+                  name="KPI"
+                  sequence="0"/>
+
+        <menuitem id="menu_sonha_kpi_report"
+                  name="Báo cáo"
+                  parent="menu_sonha_kpi"
+                  sequence="2"/>
+
+<!--        <menuitem id="menu_sonha_kpi_kpi"-->
+<!--                  name="S"-->
+<!--                  parent="menu_sonha_kpi_kpi_test"-->
+<!--                  action="action_sonha_kpi"-->
+<!--                  sequence="1"/>-->
+    </data>
+</odoo>

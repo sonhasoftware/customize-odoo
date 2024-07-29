@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="data_bi_tree_view" model="ir.ui.view">
+            <field name="name">data.bi.tree.view</field>
+            <field name="model">data.bi</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="date"/>
+                    <field name="quanty"/>
+                    <field name="department_id"/>
+                    <field name="level"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Graph View -->
+        <record id="view_data_bi_graph" model="ir.ui.view">
+            <field name="name">data.bi.graph</field>
+            <field name="model">data.bi</field>
+            <field name="arch" type="xml">
+                <graph string="Data BI" type="bar">
+                    <field name="date"/>
+                    <field name="quanty" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_windown_data_bi" model="ir.actions.act_window">
+            <field name="name">Data BI</field>
+            <field name="res_model">data.bi</field>
+            <field name="view_mode">graph,tree</field>
+        </record>
+
+
+<!--        <menuitem id="module_data_bi"-->
+<!--                  name="Power BI"-->
+<!--                  sequence="20"/>-->
+
+<!--        &lt;!&ndash; Menu Item &ndash;&gt;-->
+<!--        <menuitem id="menu_data_bi"-->
+<!--                  name="Power BI"-->
+<!--                  parent="module_data_bi"-->
+<!--                  action="action_windown_data_bi"-->
+<!--                  sequence="1"/>-->
+    </data>
+</odoo>

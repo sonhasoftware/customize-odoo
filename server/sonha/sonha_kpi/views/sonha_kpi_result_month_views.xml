@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sonha_kpi_result_month_form_view" model="ir.ui.view">
+            <field name="name">sonha.kpi.result.month.form.view</field>
+            <field name="model">sonha.kpi.result.month</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="department_id"/>
+                        <field name="year"/>
+                        <field name="small_items_each_month"/>
+                        <field name="kpi_year_id"/>
+                        <field name="employee_id"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="sonha_kpi_result_month_tree_view" model="ir.ui.view">
+            <field name="name">sonha.kpi.result.month.tree.view</field>
+            <field name="model">sonha.kpi.result.month</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="department_id"/>
+                    <field name="year"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_sonha_kpi_month" model="ir.actions.act_window">
+            <field name="name">Month SonHa KPI</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sonha.kpi.month</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('sonha_kpi_result_month_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('sonha_kpi_result_month_form_view')})]"/>
+        </record>
+
+    </data>
+</odoo>

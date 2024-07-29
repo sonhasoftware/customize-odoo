@@ -1,0 +1,34 @@
+<templates xml:space="preserve">
+  <!-- Template cho Dashboard -->
+  <t t-name="owl.OwlGreetDashboard" owl="1">
+    <div class="container-fluid p-3">
+      <div class="card mt-3">
+        <div class="card-header">
+          <h2 t-esc="state.title"/>
+        </div>
+        <div class="card-body scrollable">
+          <div class="row">
+            <div class="col-12 col-md-6 mb-4">
+              <OwlChartRenderer title="'Tiến độ thực hiện năm'" data="state.kpiData"/>
+            </div>
+            <div class="col-12 col-md-6 mb-4">
+              <RatingAmountChartRenderer title="'% Khối lượng công việc thực hiện'" data="state.ratingAmountData"/>
+            </div>
+            <div class="col-12 col-md-6 mb-4">
+              <RatioKPIChartRenderer title="'% Tỷ trọng KPI'" data="state.ratioKPIData"/>
+            </div>
+            <div class="col-12 col-md-6 mb-4">
+              <CriteriaPointsChartRenderer title="'Điểm các tiêu chí từng đơn vị'" data="state.criteriaPointsData"/>
+            </div>
+            <div class="col-12 col-md-6 mb-4">
+              <KPIPlanChartRenderer title="'KPI thực hiện theo KLCV'" data="state.kpiPlan"/>
+            </div>
+            <div class="col-12 col-md-6 mb-4">
+              <KPIAmountChartRenderer title="'KPI thực hiện theo các tiêu chí'" data="state.kpiAmount"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </t>
+</templates>

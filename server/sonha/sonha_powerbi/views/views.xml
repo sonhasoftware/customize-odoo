@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <template id="column_chart_template" name="Column Chart Template">
+        <t t-name="ColumnChartWidget">
+            <div>
+                <canvas t-att-id="chartCanvas"/>
+            </div>
+        </t>
+    </template>
+
+    <record id="action_column_chart" model="ir.actions.client">
+        <field name="name">Column Chart</field>
+        <field name="tag">ColumnChartWidget</field>
+        <field name="target">main</field>
+        <field name="context">{}</field>
+    </record>
+
+<!--        <menuitem id="menu_data_bi_chart"-->
+<!--                  name="Data BI Chart"-->
+<!--                  parent="sonha_powerbi.module_data_bi"-->
+<!--                  action="action_column_chart"/>-->
+    </data>
+</odoo>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="power_bi__cat_security">
+        <field name="name">Power BI</field>
+        <field name="sequence">1</field>
+    </record>
+
+    <record id="group_power_bi_N0" model="res.groups">
+        <field name="name">N0</field>
+        <field name="category_id" ref="power_bi__cat_security"/>
+    </record>
+
+    <record id="group_power_bi_N1" model="res.groups">
+        <field name="name">N1</field>
+        <field name="category_id" ref="power_bi__cat_security"/>
+    </record>
+
+    <record id="group_power_bi_N2" model="res.groups">
+        <field name="name">N2</field>
+        <field name="category_id" ref="power_bi__cat_security"/>
+    </record>
+
+    <record id="group_power_bi_N3" model="res.groups">
+        <field name="name">N3</field>
+        <field name="category_id" ref="power_bi__cat_security"/>
+    </record>
+
+    <record id="group_power_bi_N4" model="res.groups">
+        <field name="name">N4</field>
+        <field name="category_id" ref="power_bi__cat_security"/>
+    </record>
+
+    <record id="group_power_bi_N5" model="res.groups">
+        <field name="name">N5</field>
+        <field name="category_id" ref="power_bi__cat_security"/>
+    </record>
+
+    <record id="rule_power_bi_N5" model="ir.rule">
+        <field name="name">rule power BI N5</field>
+        <field name="model_id" ref="model_data_bi"/>
+        <field name="domain_force">[('level', 'in', ['N5'])]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('group_power_bi_N5'))]"/>
+    </record>
+
+    <record id="rule_power_bi_N4" model="ir.rule">
+        <field name="name">rule power BI N4</field>
+        <field name="model_id" ref="model_data_bi"/>
+        <field name="domain_force">[('level', 'in', ['N5','N4'])]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('group_power_bi_N4'))]"/>
+    </record>
+
+    <record id="rule_power_bi_N3" model="ir.rule">
+        <field name="name">rule power BI N3</field>
+        <field name="model_id" ref="model_data_bi"/>
+        <field name="domain_force">[('level', 'in', ['N5','N4','N3'])]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('group_power_bi_N3'))]"/>
+    </record>
+
+    <record id="rule_power_bi_N2" model="ir.rule">
+        <field name="name">rule power BI N2</field>
+        <field name="model_id" ref="model_data_bi"/>
+        <field name="domain_force">[('level', 'not in', ['N0','N1'])]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('group_power_bi_N2'))]"/>
+    </record>
+
+    <record id="rule_power_bi_N1" model="ir.rule">
+        <field name="name">rule power BI N1</field>
+        <field name="model_id" ref="model_data_bi"/>
+        <field name="domain_force">[('level', 'not in', ['N0'])]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('group_power_bi_N1'))]"/>
+    </record>
+
+    <record id="rule_power_bi_N0" model="ir.rule">
+        <field name="name">rule power BI N0</field>
+        <field name="model_id" ref="model_data_bi"/>
+        <field name="domain_force">[]</field>
+        <field name="perm_read" eval="True"/>
+        <field name="perm_write" eval="True"/>
+        <field name="perm_create" eval="True"/>
+        <field name="perm_unlink" eval="False"/>
+        <field name="groups" eval="[(4, ref('group_power_bi_N0'))]"/>
+    </record>
+
+</odoo>

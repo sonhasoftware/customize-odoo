@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="performance_report_template">
+        <t t-call="web.html_container">
+            <div class="page">
+                <style>
+                    td {
+                        border: 1px solid #000;
+                        font-weight: bold;
+                        text-align: center;
+                        vertical-align: middle !important;
+                    }
+                    th {
+                        border: 1px solid #000;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+                    td.css-color {
+                        background-color: burlywood;
+                    }
+                    th.title {
+                        background-color: darkseagreen;
+                    }
+                    td.column-normal {
+                        background-color: bisque;
+                    }
+                    td.column {
+                        background-color: coral;
+                    }
+                </style>
+                <t t-if="docs">
+                <table class="table table-sm table-hover">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th colspan="12" style="text-align: center;" class="title">Đơn vị đánh giá</th>
+                            <th colspan="12" style="text-align: center;" class="title">Cấp thẩm quyền đánh giá</th>
+                        </tr>
+                        <tr>
+                            <th class="title" style="text-align: center;vertical-align: middle;">Tháng</th>
+                            <th class="title">Khối lượng CVTH</th>
+                            <th class="title">Chất lượng CVTH</th>
+                            <th class="title">Chấp hành nội quy</th>
+                            <th class="title">Cải tiến, đề xuất, sáng kiến</th>
+                            <th class="title">Σ Điểm đạt (trước khi + điểm tiến bộ)</th>
+                            <th class="title">Ký hiệu (trước khi + điểm tiến bộ)</th>
+                            <th class="title">Điểm Tiến bộ (+/-)</th>
+                            <th class="title">Σ Điểm đạt (Đơn vị ĐG)</th>
+                            <th class="title">Ký hiệu (sau khi + điểm tiến bộ)</th>
+                            <th class="title">Xếp loại</th>
+                            <th class="css-color title">Kế hoạch</th>
+                            <th class="css-color title">Thực hiện</th>
+
+                            <th class="title">Khối lượng CVTH</th>
+                            <th class="title">Chất lượng CVTH</th>
+                            <th class="title">Chấp hành nội quy</th>
+                            <th class="title">Cải tiến, đề xuất, sáng kiến</th>
+                            <th class="title">Σ Điểm đạt (trước khi + điểm tiến bộ)</th>
+                            <th class="title">Ký hiệu (trước khi + điểm tiến bộ)</th>
+                            <th class="title">Điểm Tiến bộ (+/-)</th>
+                            <th class="title">Σ Điểm đạt (Đơn vị ĐG)</th>
+                            <th class="title">Ký hiệu (sau khi + điểm tiến bộ)</th>
+                            <th class="title">Xếp loại</th>
+                            <th class="css-color title">Kế hoạch</th>
+                            <th class="css-color title">Thực hiện</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="docs" t-as="doc">
+                            <tr>
+                                <td class="column"><t t-esc="doc.month"/></td>
+                                <td class="column-normal"><t t-esc="doc.workload"/></td>
+                                <td class="column-normal"><t t-esc="doc.quality"/></td>
+                                <td class="column-normal"><t t-esc="doc.discipline"/></td>
+                                <td class="column-normal"><t t-esc="doc.improvement"/></td>
+                                <td class="column-normal"><t t-esc="doc.total_points_before"/></td>
+                                <td class="column-normal"><t t-esc="doc.symbol_before"/></td>
+                                <td class="column-normal"><t t-esc="doc.progress_points"/></td>
+                                <td class="column-normal"><t t-esc="doc.total_points_after"/></td>
+                                <td class="column-normal"><t t-esc="doc.symbol_after"/></td>
+                                <td class="column-normal"><t t-esc="doc.classification"/></td>
+                                <td class="css-color"><t t-esc="doc.plan"/></td>
+                                <td class="css-color"><t t-esc="doc.criteria_achievement"/></td>
+
+                                <td class="column-normal"><t t-esc="doc.tq_workload"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_quality"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_discipline"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_improvement"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_total_points_before"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_symbol_before"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_progress_points"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_total_points_after"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_symbol_after"/></td>
+                                <td class="column-normal"><t t-esc="doc.tq_classification"/></td>
+                                <td class="css-color"><t t-esc="doc.tq_plan"/></td>
+                                <td class="css-color"><t t-esc="doc.tq_criteria_achievement"/></td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+                </t>
+                <t t-else="">
+                    <h1>Không có dữ liệu để hiển thị</h1>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

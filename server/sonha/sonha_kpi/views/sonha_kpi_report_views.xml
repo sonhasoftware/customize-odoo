@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_report_kpi_data_graph" model="ir.ui.view">
+        <field name="name">report.kpi.graph</field>
+        <field name="model">report.kpi</field>
+        <field name="arch" type="xml">
+            <graph string="Sonha KPI Data" disable_linking="1" stacked="False">
+                <field name="month" type="row"/>
+                <field name="workload" type="measure" group="1"/>
+                <field name="tq_workload" type="measure" group="1"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="action_sonha_report_kpi" model="ir.actions.act_window">
+        <field name="name">Sonha Report KPI</field>
+        <field name="res_model">report.kpi</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="view_report_kpi_data_graph"/>
+    </record>
+
+<!--    <menuitem id="menu_sonha_report_kpi_data"-->
+<!--              name="Power BI Odoo"-->
+<!--              parent="menu_sonha_kpi"-->
+<!--              action="action_sonha_report_kpi"-->
+<!--              sequence="100"/>-->
+</odoo>

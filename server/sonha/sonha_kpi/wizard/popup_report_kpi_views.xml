@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_popup_wizard_report_form" model="ir.ui.view">
+            <field name="name">popup.wizard.report.form</field>
+            <field name="model">popup.wizard.report</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo">
+                    <group>
+                        <field name="department_id"/>
+                        <field name="year"/>
+                    </group>
+                    <footer>
+                        <button name="action_confirm" string="Xác nhận" type="object" class="btn-primary"/>
+                        hoặc
+                        <button string="Hủy bỏ" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_popup_wizard_report" model="ir.actions.act_window">
+            <field name="name">Popup Wizard Report</field>
+            <field name="res_model">popup.wizard.report</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+
+
+        <record id="menu_popup_wizard_report" model="ir.ui.menu">
+            <field name="name">Báo cáo chi tiết theo năm</field>
+            <field name="action" ref="action_popup_wizard_report"/>
+            <field name="parent_id" ref="sonha_kpi.menu_sonha_kpi_report"/>
+            <field name="sequence" type="int">100</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+rule_data_bi_level_access_N0,Data BI Level Access N0,model_data_bi,group_power_bi_N0,1,0,0,0
+rule_data_bi_level_access_N1,Data BI Level Access N1,model_data_bi,group_power_bi_N1,1,0,0,0
+rule_data_bi_level_access_N2,Data BI Level Access N2,model_data_bi,group_power_bi_N2,1,0,0,0
+rule_data_bi_level_access_N3,Data BI Level Access N3,model_data_bi,group_power_bi_N3,1,0,0,0
+rule_data_bi_level_access_N4,Data BI Level Access N4,model_data_bi,group_power_bi_N4,1,0,0,0
+rule_data_bi_level_access__N5,Data BI Level Access N5,model_data_bi,group_power_bi_N5,1,0,0,0

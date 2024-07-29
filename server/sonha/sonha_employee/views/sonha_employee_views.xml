@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="sonha_employee_form_view" model="ir.ui.view">
+            <field name="name">sonha.employee.form.view</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="department_ids" widget="many2many_tags"/>
+                    <field name="list_employee" widget="many2many_tags"/>
+                    <field name="lower_grade" widget="many2many_tags"/>
+                    <field name="kpi" widget="many2many_tags" domain="[('id', 'in', list_employee)]"/>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="after">
+                    <field name="date"/>
+                    <field name="number"/>
+                    <field name="level"/>
+                </xpath>
+                <xpath expr="//field[@name='parent_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='coach_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="//field[@name='department_id']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

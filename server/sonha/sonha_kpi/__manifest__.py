@@ -1,0 +1,38 @@
+# -*- coding: utf-8 -*-
+{
+    'name': 'KPI Son Ha',
+    'version': '1.7',
+    'category': 'Human Resources',
+    'summary': 'Son ha KPI',
+    'website': 'https://',
+    'description': "KPI Son Ha",
+    'depends': ['base', 'hr', 'web'],
+    'data': [
+        'views/performance_report_action.xml',
+        'views/performance_report_template.xml',
+        'views/action_template_month.xml',
+        'views/report_template_month.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
+        'views/sonha_kpi_views.xml',
+        'views/config_column_views.xml',
+        'views/config_recipe_views.xml',
+        'views/company_sonha_kpi_views.xml',
+        'views/sonha_kpi_year_views.xml',
+        'views/sonha_kpi_month_views.xml',
+        'views/sonha_kpi_report_views.xml',
+        'wizard/popup_report_kpi_views.xml',
+        'wizard/popup_report_month_views.xml',
+        'views/dashboard_action.xml',
+    ],
+    'assets': {
+        'web.assets_backend': [
+            'sonha_kpi/static/src/components/**/*.js',
+            'sonha_kpi/static/src/components/**/*.xml',
+            'sonha_kpi/static/src/style.css',
+        ],
+    },
+    'installable': True,
+    'application': True,
+    'license': 'LGPL-3',
+}

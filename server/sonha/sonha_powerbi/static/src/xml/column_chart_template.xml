@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<t t-name="ColumnChartWidget">
+    <div>
+        <canvas t-att-id="chartCanvas"/>
+    </div>
+</t>
